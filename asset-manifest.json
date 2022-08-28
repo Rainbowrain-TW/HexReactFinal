@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/HexReactFinal/static/css/main.e2730c09.css",
-    "main.js": "/HexReactFinal/static/js/main.17a11648.js",
+    "main.js": "/HexReactFinal/static/js/main.403844c2.js",
     "index.html": "/HexReactFinal/index.html",
     "main.e2730c09.css.map": "/HexReactFinal/static/css/main.e2730c09.css.map",
-    "main.17a11648.js.map": "/HexReactFinal/static/js/main.17a11648.js.map"
+    "main.403844c2.js.map": "/HexReactFinal/static/js/main.403844c2.js.map"
   },
   "entrypoints": [
     "static/css/main.e2730c09.css",
-    "static/js/main.17a11648.js"
+    "static/js/main.403844c2.js"
   ]
 }
