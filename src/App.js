@@ -1,21 +1,33 @@
 import './css/App.css';
 import './css/all.css';
+import { getCookie } from './js/MyCookie';
+import { createContext, useContext, useState } from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
-
+import { AuthContext, useAuth } from './component/Context';
 import Login from './component/Login';
 import Register from './component/Register';
 import Todolist from './component/Todolist';
 
+const MyContext = createContext();
 
 function App() {
+  // let auth = getCookie('token');
+
+  const [token, setToken] = useState({});
+
+  console.log('token :>> ', token);
+  // console.log('auth :>> ', auth);
+
   return (
     <>
-      <Routes>
-        <Route path='/' element={<Navigate to="/login" />} />
-        <Route path='login' element={<Login />} />
-        <Route path='register' element={<Register />} />
-        <Route path='todo' element={<Todolist />} />
-      </Routes>
+      <AuthContext.Provider value={{ token, setToken }}>
+        <Routes>
+          <Route path='/' element={<Navigate to="/login" />} />
+          <Route path='login' element={token.auth ? <Navigate to="/todo" /> : <Login />} />
+          <Route path='register' element={<Register />} />
+          <Route path='todo' element={<Todolist />} />
+        </Routes>
+      </AuthContext.Provider>
     </>
   );
 }
